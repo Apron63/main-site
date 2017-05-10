@@ -209,23 +209,24 @@ a.desc:after {
     color: red;
 }
 /* Test breadcrumbs*/
-.entryLinkbar {
+.my-breadcrumbs {
     font-family: "Arial", "Verdana", sans-serif;
-    font-size: 11px;
+    font-size: 15px;
 }
-.entryLinkbar {
+.my-breadcrumbs {
     list-style: none;
     display: inline-block;
     padding: 2px 0px 2px 0px;
     margin: 20px 0px 0 0;
     background-color: #323232;
     width: 100%;
+    /*height: px;*/
 }
-.entryLinkbar li {
+.my-breadcrumbs li {
     float: left;
     padding: 0px;
 }
-.entryLinkbar li a {
+.my-breadcrumbs li a {
     color: #CCC;
     display: block;
     background: #323232;
@@ -237,35 +238,35 @@ a.desc:after {
     text-align: center;
     margin-right: 23px;
 }
-.entryLinkbar li:nth-child(even) a {
+.my-breadcrumbs li:nth-child(even) a {
     background-color: #323232;
 }
-.entryLinkbar li:nth-child(even) a:before {
+.my-breadcrumbs li:nth-child(even) a:before {
     border-color: #323232;
     border-left-color: transparent;
 }
-.entryLinkbar li:nth-child(even) a:after {
+.my-breadcrumbs li:nth-child(even) a:after {
     border-left-color: #323232;
 }
-.entryLinkbar li:first-child a {
+.my-breadcrumbs li:first-child a {
     padding-left: 15px;
     -moz-border-radius: 2px 0 0 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px 0 0 2px;
 }
-.entryLinkbar li:first-child a:before {
+.my-breadcrumbs li:first-child a:before {
     border: none;
 }
-.entryLinkbar li:last-child a {
+.my-breadcrumbs li:last-child a {
     padding-right: 15px;
     -moz-border-radius: 0 2px 2px 0;
     -webkit-border-radius: 0;
     border-radius: 0 2px 2px 0;
 }
-.entryLinkbar li:last-child a:after {
+.my-breadcrumbs li:last-child a:after {
     border: none;
 }
-.entryLinkbar li a:before, .entryLinkbar li a:after {
+.my-breadcrumbs li a:before, .entryLinkbar li a:after {
     content: "";
     position: absolute;
     top: 0;
@@ -274,34 +275,34 @@ a.desc:after {
     width: 0;
     height: 0;
 }
-.entryLinkbar li a:before {
+.my-breadcrumbs li a:before {
     left: -21px;
     border-left-color: transparent;
 }
-.entryLinkbar li a:after {
+.my-breadcrumbs li a:after {
     left: 100%;
     border-color: transparent;
     border-left-color: #323232;
 }
-.entryLinkbar li a:hover {
+.my-breadcrumbs li a:hover {
     background-color: #DD4B39;
     color: #FFF;
 }
-.entryLinkbar li a:hover:before {
+.my-breadcrumbs li a:hover:before {
     border-color: #DD4B39;
     border-left-color: transparent;
 }
-.entryLinkbar li a:hover:after {
+.my-breadcrumbs li a:hover:after {
     border-left-color: #DD4B39;
 }
-.entryLinkbar li a:active {
+.my-breadcrumbs li a:active {
     background-color: #666666;
     color: #E6E6E6;
 }
-.entryLinkbar li a:active:before {
+.my-breadcrumbs li a:active:before {
     border-color: #666666;
     border-left-color: transparent;
 }
-.entryLinkbar li a:active:after {
+.my-breadcrumbs li a:active:after {
     border-left-color: #666666;
 }

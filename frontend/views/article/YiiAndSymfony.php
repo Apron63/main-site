@@ -6,15 +6,9 @@ use yii\helpers\Html;
 
 $this->title = 'Про Yii и Symfony';
 $this->params['breadcrumbs'][] = ['label' => 'Мои статьи', 'url' => ['site/posts']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ''];
 ?>
 
-<div class="entryLinkbar">
-    <ul>
-        <li><a>Кось</a></li>
-        <li><a>Мось</a></li>
-    </ul>
-</div>
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
 

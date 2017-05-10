@@ -31,9 +31,13 @@ AppAsset::register($this);
 
 <div class="wrap">
     <div class="container">
+        <div class="my-breadcrumbs">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            'options' => ['class' => ''],
+            'tag' => 'ul',
         ]) ?>
+        </div>
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
