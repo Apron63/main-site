@@ -266,7 +266,7 @@ a.desc:after {
 .my-breadcrumbs li:last-child a:after {
     border: none;
 }
-.my-breadcrumbs li a:before, .entryLinkbar li a:after {
+.my-breadcrumbs li a:before, .my-breadcrumbs li a:after {
     content: "";
     position: absolute;
     top: 0;

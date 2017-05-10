@@ -5,7 +5,7 @@
 use yii\helpers\Html;
 
 $this->title = 'Мои статьи';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ''];
 ?>
 <h2><?= Html::encode($this->title) ?></h2>
 
