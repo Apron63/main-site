@@ -13,6 +13,8 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
+use frontend\models\FeedbackForm;
+
 /**
  * Site controller
  */
@@ -223,6 +225,18 @@ class SiteController extends Controller
 
     public function actionFeedback() 
     {
-        return $this->render('feedback');
+        $model = new FeedbackForm();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success', 'Ваше сообщение успешно сохранено.');
+                return $this->goHome();
+            } else {
+                Yii::$app->session->setFlash('error', 'Что то пошло не так.');
+            }
+        }
+        return $this->render('feedback', [
+            'model' => $model,
+        ]);
     }
 }
