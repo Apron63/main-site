@@ -2,19 +2,18 @@
 
 namespace frontend\models;
 
-use yii\base\Model;
+use yii\db\ActiveRecord;
 
 /**
  * ContactForm is the model behind the contact form.
  */
-class FeedbackForm extends Model
+class FeedbackForm extends ActiveRecord
 {
     public $name;
     public $message;
     public $email;
     public $subject;
     public $body;
-    public $verifyCode;
 
     /**
      * @inheritdoc
@@ -22,13 +21,14 @@ class FeedbackForm extends Model
     public function rules()
     {
         return [
-            // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
-            ['message', 'required'],
+            ['name', 'required'],
+            ['message', 'safe'],
+            //[['name', 'email', 'subject', 'body'], 'required'],
+            //['message', 'required'],
             // email has to be a valid email address
-            ['email', 'email'],
+            //['email', 'email'],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+            //['verifyCode', 'captcha'],
         ];
     }
 
@@ -39,7 +39,7 @@ class FeedbackForm extends Model
     {
         return [
             'name' => 'Представьтесь',
-            'message' => 'Сообщение',
+            'message' => 'Текст сообщения',
             'verifyCode' => 'Verification Code',
         ];
     }

@@ -306,3 +306,8 @@ a.desc:after {
 .my-breadcrumbs li a:active:after {
     border-left-color: #666666;
 }
+
+/*form field decoration*/
+.mdl-textfield {
+    width: 100%; !important;
+}

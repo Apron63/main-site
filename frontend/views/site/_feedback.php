@@ -5,8 +5,8 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-//use common\widgets\ThemedField;
+use yii\bootstrap\ActiveForm;
+use common\widgets\ThemedField;
 
 $this->title = 'Обратная связь';
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ''];
@@ -18,19 +18,24 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ''];
 
 <?php $form = ActiveForm::begin([
     'id' => 'feedback-form',
+    'layout' => 'horizontal',
     'fieldConfig' => [
-        'template' => '{input}{label}',
-        'options' => [
-            'class' => 'mdl-textfield mdl-js-textfield',
+        //'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
+        'template' => "{beginWrapper}\n{input}\n{label}\n{hint}\n{error}\n{endWrapper}",
+        'horizontalCssClasses' => [
+            'label' => 'mdl-textfield__label',
+            'offset' => 'mdl-textfield__input',
+            'wrapper' => 'mdl-textfield mdl-js-textfield mdl-textfield--floating-label',
+            'error' => '',
+            'hint' => '',
         ],
-        'labelOptions' => ['class' => 'mdl-textfield__label'],
-        'inputOptions' => ['class' => 'mdl-textfield__input'],
     ],
-    //'labelClass' => 'mylabel',
 ]); ?>
 
-<?= $form->field($model, 'name')->textInput(['autofocus' => true])?>
-<?= $form->field($model, 'message')->textArea()?>
+
+<?= ThemedField::renderField($model, 'name'); ?>
+
+<?= 1/*ThemedField::renderArea($model, 'message');*/ ?>
 
 <div class="">
     <?= Html::submitButton('Создать', ['class' => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent', 'name' => 'contact-button']) ?>

@@ -228,12 +228,15 @@ class SiteController extends Controller
         $model = new FeedbackForm();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->save()) {
+            if ($model->save(false)) {
                 Yii::$app->session->setFlash('success', 'Ваше сообщение успешно сохранено.');
                 return $this->goHome();
             } else {
                 Yii::$app->session->setFlash('error', 'Что то пошло не так.');
             }
+        }
+        if ($model->hasErrors()) {
+            Yii::$app->session->setFlash('error', 'Данные содержат ошибки.');
         }
         return $this->render('feedback', [
             'model' => $model,
