@@ -13,6 +13,11 @@ class ArticleController extends Controller
         return $this->render('YiiAndSymfony');
     }
 
+    public function actionNostalgie()
+    {
+        return $this->render('nostalgie');
+    }
+
     public function actionFirst()
     {
         echo 'Test!';

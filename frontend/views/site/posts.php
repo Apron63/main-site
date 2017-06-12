@@ -13,6 +13,6 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ''];
 <p>Верстка в процессе разработки</p>
 
 <ul>
+    <li><a href="../article/nostalgie" class="btn btn-link">Немного вступления (ностальгическое)</a></li>
     <li><a href="../article/yii-and-symfony" class="btn btn-link">Про Yii и Symfony</a></li>
-    <li><a href="../article/first" class="btn btn-link">Про еще что что</a></li>
 </ul>

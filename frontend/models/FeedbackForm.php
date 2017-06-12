@@ -9,26 +9,29 @@ use yii\db\ActiveRecord;
  */
 class FeedbackForm extends ActiveRecord
 {
+    public $id;
+    public $created_at;
     public $name;
     public $message;
-    public $email;
-    public $subject;
-    public $body;
+    public $addr;
+    public $ref_url;
+    public $user_agent;
 
     /**
      * @inheritdoc
      */
+
+    public static function tableName()
+    {
+        return 'main_feedback';
+    }
+
     public function rules()
     {
         return [
-            ['name', 'required'],
-            ['message', 'safe'],
-            //[['name', 'email', 'subject', 'body'], 'required'],
-            //['message', 'required'],
-            // email has to be a valid email address
-            //['email', 'email'],
-            // verifyCode needs to be entered correctly
-            //['verifyCode', 'captcha'],
+            [['name', 'message'], 'required'],
+            [['created_at'], 'integer'],
+            [['id', 'addr', 'ref_url', 'user_agent'], 'safe'],
         ];
     }
 
@@ -40,7 +43,6 @@ class FeedbackForm extends ActiveRecord
         return [
             'name' => 'Представьтесь',
             'message' => 'Текст сообщения',
-            'verifyCode' => 'Verification Code',
         ];
     }
 }

@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ''];
     //'labelClass' => 'mylabel',
 ]); ?>
 
-<?= $form->field($model, 'name')->textInput(['autofocus' => true])?>
+<?= $form->field($model, 'name')->textInput(['autofocus' => 'on', 'autocomplete' => 'off'])?>
 <?= $form->field($model, 'message')->textArea()?>
 
 <div class="">

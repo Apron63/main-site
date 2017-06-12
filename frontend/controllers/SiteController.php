@@ -226,9 +226,10 @@ class SiteController extends Controller
     public function actionFeedback() 
     {
         $model = new FeedbackForm();
+        $model->created_at = time();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->save(false)) {
+            if ($model->save()) {
                 Yii::$app->session->setFlash('success', 'Ваше сообщение успешно сохранено.');
                 return $this->goHome();
             } else {
@@ -236,7 +237,7 @@ class SiteController extends Controller
             }
         }
         if ($model->hasErrors()) {
-            Yii::$app->session->setFlash('error', 'Данные содержат ошибки.');
+            Yii::$app->session->setFlash('error', 'Введеные данные содержат ошибки.');
         }
         return $this->render('feedback', [
             'model' => $model,
