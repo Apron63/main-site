@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ''];
 <?= $form->field($model, 'message')->textArea()?>
 
 <div class="">
-    <?= Html::submitButton('Создать', ['class' => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent', 'name' => 'contact-button']) ?>
+    <?= Html::submitButton('Оставить сообщение', ['class' => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent', 'name' => 'contact-button']) ?>
 </div>
 
 <?php ActiveForm::end(); ?>

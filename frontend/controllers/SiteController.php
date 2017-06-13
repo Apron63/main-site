@@ -14,6 +14,7 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
 use frontend\models\FeedbackForm;
+use common\helpers\WatchDogHelper;
 
 /**
  * Site controller
@@ -74,7 +75,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        if(isset($_SESSION['watched']))
+            WatchDogHelper::watch();
+        var_dump($_SESSION);
+        //return $this->render('index');
     }
 
     /**
@@ -226,9 +230,12 @@ class SiteController extends Controller
     public function actionFeedback() 
     {
         $model = new FeedbackForm();
-        $model->created_at = time();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->created_at = time();
+            $model->addr = $_SERVER['REMOTE_ADDR'];
+            $model->ref_url = $_SERVER['HTTP_REFERER'];
+            $model->user_agent = $_SERVER['HTTP_USER_AGENT'];
             if ($model->save()) {
                 Yii::$app->session->setFlash('success', 'Ваше сообщение успешно сохранено.');
                 return $this->goHome();

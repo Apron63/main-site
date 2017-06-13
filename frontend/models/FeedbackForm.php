@@ -9,14 +9,6 @@ use yii\db\ActiveRecord;
  */
 class FeedbackForm extends ActiveRecord
 {
-    public $id;
-    public $created_at;
-    public $name;
-    public $message;
-    public $addr;
-    public $ref_url;
-    public $user_agent;
-
     /**
      * @inheritdoc
      */
@@ -30,7 +22,7 @@ class FeedbackForm extends ActiveRecord
     {
         return [
             [['name', 'message'], 'required'],
-            [['created_at'], 'integer'],
+            ['created_at', 'integer'],
             [['id', 'addr', 'ref_url', 'user_agent'], 'safe'],
         ];
     }
