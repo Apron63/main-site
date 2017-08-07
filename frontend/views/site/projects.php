@@ -24,4 +24,19 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ''];
     </div>
 </div>
 
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Тестовое задание для ID20
+    </div>
+    <div class="panel-body">
+        Вывод данных из БД транзакций платежных карт. Предварительно посчитать число транзакций за период.
+        Фильтр по периоду и номеру карты.
+        Не заморачивался насчет верстки, главное - функционал. 
+    </div>
+    <div class="panel-footer">
+        <p><a href="/qingzi/frontend/web" target="_blank">Перейти к приложению</a></p>
+        <p><a href="https://github.com/apron63/qingzi" target="_blank">Исходный код на GitHub</a></p>
+    </div>
+</div>
+
 
