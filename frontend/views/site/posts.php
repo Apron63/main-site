@@ -15,4 +15,5 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ''];
 <ul>
     <li><a href="../article/nostalgie" class="btn btn-link">Немного вступления (ностальгическое)</a></li>
     <li><a href="../article/yii-and-symfony" class="btn btn-link">Про Yii и Symfony</a></li>
+    <li><a href="../article/yii-bootstrap4" class="btn btn-link">Yii2 - переходим на Bootstrap 4</a></li>
 </ul>

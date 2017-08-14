@@ -8,6 +8,12 @@ use yii\web\Controller;
  */
 class ArticleController extends Controller
 {
+
+    public function actionYiiBootstrap4()
+    {
+        return $this->render('YiiBootstrap-4');
+    }
+
     public function actionYiiAndSymfony()
     {
         return $this->render('YiiAndSymfony');
