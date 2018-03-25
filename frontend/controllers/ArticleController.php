@@ -24,6 +24,11 @@ class ArticleController extends Controller
         return $this->render('nostalgie');
     }
 
+    public function actionHacks()
+    {
+        return $this->render('hacks');
+    }
+
     public function actionFirst()
     {
         echo 'Test!';
